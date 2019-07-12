@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xpu.edu.dao.SalaryInfoDao">
+    <select id="getAll" resultType="xpu.edu.entry.SalaryInfo">
+		select * from salary_info
+	</select>
+
+	<insert id="addOne" parameterType="xpu.edu.entry.SalaryInfo">
+		insert into salary_info values (#{salary_id}, #{salary_basic}, #{salary_bonus}, #{salary_traffic},#{salary_msg},#{salary_meal}, #{salary_housing},#{salary_evection},#{salary_work}, #{salary_name},#{salary_creator},#{salary_checker}, #{create_time}, #{salary_status}, #{salary_mind}, #{salary_change})
+	</insert>
+
+	<select id="getOne" parameterType="java.lang.String"  resultType="xpu.edu.entry.SalaryInfo">
+		select * from salary_info where salary_id = #{salary_id}
+	</select>
+
+	<delete id="deleteOne" parameterType="java.lang.String">
+		delete  from salary_info where salary_id = #{salary_id}
+	</delete>
+
+	<update id="updateOne" parameterType="xpu.edu.entry.SalaryInfo" >
+		update salary_info set  salary_id = #{salary_id},  salary_basic = #{salary_basic}, salary_bonus = #{salary_bonus}, salary_traffic = #{salary_traffic}, salary_msg = #{salary_msg}, salary_meal = #{salary_meal}, salary_housing = #{salary_housing}, salary_evection = #{salary_evection}, salary_work = #{salary_work}, salary_name = #{salary_name}, salary_creator = #{salary_creator}, salary_checker = #{salary_checker}, create_time = #{create_time}, salary_status = #{salary_status}, salary_mind = #{salary_mind}, salary_change = #{salary_change} where salary_id = #{salary_id}
+	</update>
+</mapper>

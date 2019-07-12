@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xpu.edu.dao.PaymentInfoDao">
+    <select id="getAll" resultType="xpu.edu.entry.PaymentInfo">
+		select * from payment_info
+	</select>
+
+	<insert id="addOne" parameterType="xpu.edu.entry.PaymentInfo">
+		insert into payment_info values (#{payment_id}, #{payment_count}, #{payment_people}, #{payment_money},#{payment_real_money},#{create_time})
+	</insert>
+
+	<select id="getOne" parameterType="java.lang.String"  resultType="xpu.edu.entry.PaymentInfo">
+		select * from payment_info where payment_id = #{payment_id}
+	</select>
+
+	<delete id="deleteOne" parameterType="java.lang.String">
+		delete  from payment_info where payment_id = #{payment_id}
+	</delete>
+
+	<update id="updateOne" parameterType="xpu.edu.entry.PaymentInfo" >
+		update grant_item set  payment_id = #{payment_id},  payment_count = #{payment_count}, payment_people = #{payment_people}, payment_money = #{payment_money}, payment_real_money = #{payment_real_money}, create_time = #{create_time} where payment_id = #{payment_id}
+	</update>
+</mapper>

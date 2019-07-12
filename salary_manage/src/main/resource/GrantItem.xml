@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xpu.edu.dao.GrantItemDao">
+    <select id="getAll" resultType="xpu.edu.entry.GrantItem">
+		select * from grant_item
+	</select>
+
+	<insert id="addOne" parameterType="xpu.edu.entry.GrantItem">
+		insert into grant_item values (#{grant_id}, #{salary_id}, #{user_id}, #{payment_item_id})
+	</insert>
+
+	<select id="getOne" parameterType="java.lang.Integer"  resultType="xpu.edu.entry.GrantItem">
+		select * from grant_item where grant_id = #{grant_id}
+	</select>
+
+	<delete id="deleteOne" parameterType="java.lang.Integer">
+		delete  from grant_item where grant_id = #{grant_id}
+	</delete>
+
+	<update id="updateOne" parameterType="xpu.edu.entry.GrantItem" >
+		update grant_item set  salary_id = #{salary_id},  user_id = #{user_id}, payment_item_id = #{payment_item_id} where grant_id = #{grant_id}
+	</update>
+</mapper>

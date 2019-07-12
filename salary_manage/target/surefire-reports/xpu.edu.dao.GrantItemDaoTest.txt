@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: xpu.edu.dao.GrantItemDaoTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.35 s <<< FAILURE! - in xpu.edu.dao.GrantItemDaoTest
+test(xpu.edu.dao.GrantItemDaoTest)  Time elapsed: 0.337 s  <<< ERROR!
+org.apache.ibatis.exceptions.PersistenceException: 
+
+### Error querying database.  Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+### The error may exist in GrantItem.xml
+### The error may involve xpu.edu.dao.GrantItemDao.getAll
+### The error occurred while executing a query
+### Cause: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at xpu.edu.dao.GrantItemDaoTest.test(GrantItemDaoTest.java:27)
+Caused by: java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at xpu.edu.dao.GrantItemDaoTest.test(GrantItemDaoTest.java:27)
+Caused by: com.mysql.cj.exceptions.InvalidConnectionAttributeException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+	at xpu.edu.dao.GrantItemDaoTest.test(GrantItemDaoTest.java:27)
+

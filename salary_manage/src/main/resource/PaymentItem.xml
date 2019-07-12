@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xpu.edu.dao.PaymentItemDao">
+    <select id="getAll" resultType="xpu.edu.entry.PaymentItem">
+		select * from payment_item
+	</select>
+
+	<insert id="addOne" parameterType="xpu.edu.entry.PaymentItem">
+		insert into payment_item values (#{payment_item_id}, #{payment_item_org}, #{payment_item_orgg}, #{payment_item_people},#{payment_item_money})
+	</insert>
+
+	<select id="getOne" parameterType="java.lang.String"  resultType="xpu.edu.entry.PaymentItem">
+		select * from payment_item where payment_item_id = #{payment_item_id}
+	</select>
+
+	<delete id="deleteOne" parameterType="java.lang.String">
+		delete  from payment_item where payment_item_id = #{payment_item_id}
+	</delete>
+
+	<update id="updateOne" parameterType="xpu.edu.entry.PaymentItem" >
+		update payment_item set  payment_item_id = #{payment_item_id},  payment_item_org = #{payment_item_org}, payment_item_orgg = #{payment_item_orgg}, payment_item_people = #{payment_item_people}, payment_item_money = #{payment_item_money} where payment_item_id = #{payment_item_id}
+	</update>
+</mapper>
